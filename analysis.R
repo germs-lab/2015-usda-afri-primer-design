@@ -32,6 +32,16 @@ plot_bar(all, "Location",facet_grid=~Medicated, fill="V6")
 plot_bar(all, "V6")
 plot_heatmap(all, sample.label="Location")
 heatmap(otuTable(all))
+plot_bar(all, "OTU",facet_grid=~Medicated, fill="V6") + theme_bw() + theme(strip.text.x=element_text(angle=90), axis.text.x=element_text(angle=90))
+
+mdf <- psmelt(all)
+#summarizing average over experiment
+f <- ddply(mdf, .(Medicated, Location, OTU, V6), summarise, SUM=sum(Abundance))
+f$OTU <- factor(f$OTU, levels=f$OTU[order(-f$SUM)])
+p = ggplot(f, aes_string(x="OTU", y="SUM", fill="V6"))
+p + geom_bar(stat="identity", colour="black")+facet_grid(Location~Medicated)+theme_bw()+theme(strip.text.x=element_text(angle=90), axis.text.x=element_text(angle=90, size=5))
+
+
 
 
 mdf <- psmelt(all)
