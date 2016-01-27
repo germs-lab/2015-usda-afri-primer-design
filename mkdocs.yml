@@ -2,3 +2,5 @@ site_name: DARTE-QM Tutorials
 pages:
 - [index.md, Home]
 - [about.md, About]
+- [primers.md, Primer Design]
+
