@@ -57,15 +57,15 @@ The input into this script is going to be
 
 With tree:
 
-    java -jar PrimerDesign.jar  select-primer-pipeline -i gene.aln_na.fa -t gene.aln_na.nwk --productLengthMin 150 --isHenikoffWeightNeeded false
+    java -jar PrimerDesign.jar --subcommand select-primer-pipeline -i gene.aln_na.fa -t gene.aln_na.nwk --productLengthMin 150 --isHenikoffWeightNeeded false
 
 Without tree:
 
-    java -jar PrimerDesign.jar  select-primer-pipeline -i gene.aln_na.fa --productLengthMin 150 --isHenikoffWeightNeeded false --isTreeWeightNeeded false
+    java -jar PrimerDesign.jar --subcommand select-primer-pipeline -i gene.aln_na.fa --productLengthMin 150 --isHenikoffWeightNeeded false --isTreeWeightNeeded false
 
 To see the alignment on a graph:
 
-    java -jar PrimerDesign.jar screen-oligo-pipeline -i gene.aln_na.fa -o gene_graphs
+    java -jar PrimerDesign.jar --subcommand screen-oligo-pipeline -i gene.aln_na.fa -o gene_graphs
 
 Other options can be explored using:
 
