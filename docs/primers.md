@@ -69,4 +69,4 @@ To see the alignment on a graph:
 
 Other options can be explored using:
 
-    java -jar PrimerDesign_v0.0.1/PrimerDesign.jar --help
+    java -jar PrimerDesign_v0.0.2/PrimerDesign.jar --help
